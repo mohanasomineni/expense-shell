@@ -36,13 +36,12 @@ CHECK_ROOT
 dnf install mysql-server -y &>>$LOG_FILE_NAME
 VALIDATE $? "Installing MySQL server"
 
-systemctl enable mysqld $LOG_FILE_NAME
+systemctl enable mysqld &>>$LOG_FILE_NAME
 VALIDATE $? "Enabling MySQL server"
 
-systemctl start mysqld $LOG_FILE_NAME
+systemctl start mysqld &>>$LOG_FILE_NAME
 VALIDATE $? "Starting MySQL server"
 
 mysql_secure_installation --set-root-pass ExpenseApp@1
 VALIDATE $? "Setting Root Password"
-
 
