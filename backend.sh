@@ -73,7 +73,7 @@ cp /home/ec2-user/expense-shell/backend.service /etc/systemd/system/backend.serv
 dnf install mysql -y &>>$LOG_FILE_NAME
 VALIDATE $? "Installing MySQL Client"
 
-mysql -h mysql.mohanaaws.store -uroot -pExpenseApp@1 < /apps/schema/backend.sql &>>$LOG_FILE_NAME
+mysql -h mysql.mohanaaws.store -uroot -pExpenseApp@1 < /app/schema/backend.sql &>>$LOG_FILE_NAME
 VALIDATE $? "Setting up the transaction schema and tables"
 
 systemctl daemon-reload &>>$LOG_FILE_NAME
