@@ -48,7 +48,7 @@ VALIDATE $? "Adding expensed user"
 mkdir /app &>>$LOG_FILE_NAME
 VALIDATE $? "Creating app directory"
 
-curl -o /tmp/backend.zip https://expense-builds.s3.us-east-1.amazonaws.com/expense-backend-v2.zip &>>$LOG_FILE_NAME
+curl -o /tmp/backend.zip https://expensed-builds.s3.us-east-1.amazonaws.com/expense-backend-v2.zip &>>$LOG_FILE_NAME
 VALIDATE $? "Downloading backend"
 
 cd /app
@@ -59,7 +59,7 @@ VALIDATE $? "unzip backend"
 npm install &>>$LOG_FILE_NAME
 VALIDATE $? "Installing dependencies"
 
-cp /home/ec2-user/expense-shell/backend.service /etc/systemd/system/backend.service
+cp /home/ec2-user/expensed-shell/backend.service /etc/systemd/system/backend.service
 
 # Prepare MySQL schema
 
