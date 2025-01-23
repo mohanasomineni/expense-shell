@@ -42,7 +42,7 @@ VALIDATE $? "Enabling MySQL server"
 systemctl start mysqld &>>$LOG_FILE_NAME
 VALIDATE $? "Starting MySQL server"
 
-mysql -h mysql.mohanaaws.store -u root -pExpenseApp@1 -e 'show databases;'
+mysql -h mysql.mohanaaws.store -u root -pExpenseApp@1 -e 'show databases;' &>>$LOG_FILE_NAME
 
 if [ $? -ne 0 ]
 then
