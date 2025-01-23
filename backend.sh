@@ -42,8 +42,8 @@ VALIDATE $? "Enabling NodeJS 20"
 dnf install nodejs -y &>>$LOG_FILE_NAME
 VALIDATE $? "Installing NodeJS"
 
-useradd expense &>>$LOG_FILE_NAME
-VALIDATE $? "Adding expense user"
+useradd expensed &>>$LOG_FILE_NAME
+VALIDATE $? "Adding expensed user"
 
 mkdir /app &>>$LOG_FILE_NAME
 VALIDATE $? "Creating app directory"
